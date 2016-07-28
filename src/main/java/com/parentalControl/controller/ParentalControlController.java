@@ -17,7 +17,7 @@ public class ParentalControlController {
     public String greeting(@RequestParam(value="controlLevel", defaultValue="") String parentalControlLevel,@RequestParam(value="movieId",defaultValue="") String movieId) {
     	
     	ParentalControlService test = new ParentalControlServiceImpl();
-    	return result +test.checkParentalControlLevel(parentalControlLevel, movieId)+ movie+movieId;
+    	return result +test.checkParentalControlLevel(parentalControlLevel.toUpperCase(), movieId)+ movie+movieId;
     	
     }
 }

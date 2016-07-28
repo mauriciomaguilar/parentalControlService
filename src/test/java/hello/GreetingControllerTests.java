@@ -32,6 +32,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.parentalControl.controller.Application;
+import com.parentalControl.enums.ParentalControlLevel;
 
 /**
  * @author Greg Turnquist
@@ -54,7 +55,7 @@ public class GreetingControllerTests {
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
-		this.mockMvc.perform(get("/greeting"))
+		this.mockMvc.perform(get("/parentalControlService"))
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.content").value("Hello, World!"));
@@ -63,7 +64,7 @@ public class GreetingControllerTests {
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
-		this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
+		this.mockMvc.perform(get("/parentalControlService").param("controlLevel", ParentalControlLevel.EIGHTEEN.getLevel()))
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.content").value("Hello, Spring Community!"));

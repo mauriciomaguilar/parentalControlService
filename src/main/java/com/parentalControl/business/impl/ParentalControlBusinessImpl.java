@@ -12,13 +12,15 @@ public class ParentalControlBusinessImpl implements ParentalControlBusiness {
 	public boolean validateParentalControl(
 			ParentalControlLevel customerPreference,
 			ParentalControlLevel movieParentalControl) {
-		
-		if(movieParentalControl.getValue() <= customerPreference.getValue()){
-			return true;
+		boolean isAllowed = false;
+
+		if (movieParentalControl != null && customerPreference != null) {
+			if (movieParentalControl.getValue() <= customerPreference
+					.getValue()) {
+				isAllowed = true;
+			}
 		}
-		return false;
+		return isAllowed;
 	}
 
-	
-	
 }
