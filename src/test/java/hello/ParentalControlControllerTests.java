@@ -34,13 +34,11 @@ import org.springframework.web.context.WebApplicationContext;
 import com.parentalControl.controller.Application;
 import com.parentalControl.enums.ParentalControlLevel;
 
-/**
- * @author Greg Turnquist
- */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-public class GreetingControllerTests {
+public class ParentalControlControllerTests {
 
 	@Autowired
 	private WebApplicationContext ctx;
