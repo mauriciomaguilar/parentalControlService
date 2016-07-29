@@ -26,12 +26,10 @@ public class ParentalControlController {
 
 		try {
 			return parentalControlBusiness.checkParentalControlLevel(parentalControlLevel.toUpperCase(), movieId);
-		} catch (TitleNotFoundException e) {
-			e.printStackTrace();
-		} catch (TechnicalFailureException e) {
+		} catch (TitleNotFoundException | TechnicalFailureException e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
-	
+
 }
