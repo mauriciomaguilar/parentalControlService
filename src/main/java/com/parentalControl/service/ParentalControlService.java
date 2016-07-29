@@ -1,11 +1,14 @@
 package com.parentalControl.service;
 
-import com.parentalControl.enums.ParentalControlLevelEnum;
+import com.parentalControl.exceptions.TechnicalFailureException;
+import com.parentalControl.exceptions.TitleNotFoundException;
 
+/**
+ * 
+ * @author Mauricio Moreira de Aguilar 28/07/2016 21:52:37
+ *
+ */
 public interface ParentalControlService {
 
-    boolean validateParentalControl(ParentalControlLevelEnum parentalControlLevelPreference,
-            ParentalControlLevelEnum parentalControlLevelMovie);
-
-    boolean checkParentalControlLevel(String parentalControlLevel, String movieId);
+	boolean checkParentalControlLevel(String parentalControlLevel, String movieId) throws TitleNotFoundException, TechnicalFailureException;
 }

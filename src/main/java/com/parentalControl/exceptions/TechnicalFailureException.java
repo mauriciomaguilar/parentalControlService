@@ -1,5 +1,10 @@
 package com.parentalControl.exceptions;
 
+/**
+ * 
+ * @author Mauricio Moreira de Aguilar 28/07/2016 21:52:09
+ *
+ */
 public class TechnicalFailureException extends Exception {
 
 	/**
@@ -10,8 +15,8 @@ public class TechnicalFailureException extends Exception {
 	public TechnicalFailureException(String message) {
 		super(message);
 	}
-	
-	public String getMessage(){
+
+	public String getMessage() {
 		return super.getMessage();
 	}
 
