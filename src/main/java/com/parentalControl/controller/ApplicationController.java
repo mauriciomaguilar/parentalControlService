@@ -11,9 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan({ "com.parentalControl.controller",
 		"com.parentalControl.service" })
-public class Application {
+public class ApplicationController {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ApplicationController.class, args);
 	}
 }
