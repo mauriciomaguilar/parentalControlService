@@ -32,7 +32,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.parentalControl.controller.Application;
-import com.parentalControl.enums.ParentalControlLevel;
+import com.parentalControl.enums.ParentalControlLevelEnum;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -62,7 +62,7 @@ public class ParentalControlControllerTests {
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
-		this.mockMvc.perform(get("/parentalControlService").param("controlLevel", ParentalControlLevel.EIGHTEEN.getLevel()))
+		this.mockMvc.perform(get("/parentalControlService").param("controlLevel", ParentalControlLevelEnum.EIGHTEEN.getLevel()))
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.content").value("Hello, Spring Community!"));

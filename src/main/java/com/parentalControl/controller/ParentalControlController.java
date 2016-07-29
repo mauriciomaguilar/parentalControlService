@@ -5,13 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.parentalControl.business.ParentalControlBusiness;
+import com.parentalControl.service.ParentalControlService;
 
 @RestController
 public class ParentalControlController {
 
     @Autowired
-    ParentalControlBusiness parentalControlBusiness;
+    ParentalControlService parentalControlBusiness;
 
     @RequestMapping("/parentalControlService")
     public boolean process(@RequestParam(value = "controlLevel", defaultValue = "") String parentalControlLevel,
