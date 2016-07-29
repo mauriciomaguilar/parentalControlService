@@ -56,10 +56,10 @@ public class ParentalControlControllerTests {
 		Assert.assertFalse(result);
 	}
 
-	public boolean basicTest(String level1, String level2) {
+	public boolean basicTest(String parentalControlLevel, String movieId) {
 		boolean result = false;
 		try {
-			result = parentalControlService.checkParentalControlLevel(level1, level2);
+			result = parentalControlService.checkParentalControlLevel(parentalControlLevel, movieId);
 		} catch (TitleNotFoundException | TechnicalFailureException e) {
 			e.printStackTrace();
 		}
