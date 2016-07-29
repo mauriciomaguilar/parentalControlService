@@ -1,6 +1,7 @@
 package com.parentalControl.service.Impl;
 
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import com.parentalControl.enums.ParentalControlLevelEnum;
 import com.parentalControl.exceptions.TechnicalFailureException;
@@ -19,7 +20,7 @@ public class MovieServiceImpl implements MovieService {
 	public String getParentalControlLevel(String movieId) throws TitleNotFoundException, TechnicalFailureException {
 		String result = "";
 
-		if (movieId != null && movieId != "") {
+		if (!StringUtils.isEmpty(movieId)) {
 			int movie = Integer.parseInt(movieId);
 
 			switch (movie) {
